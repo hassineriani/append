@@ -2,7 +2,7 @@
 * Template Name: Append
 * Updated: Jul 27 2023 with Bootstrap v5.3.1
 * Template URL: https://efrekiadev.com/append-bootstrap-website-template/
-* Author: BootstrapMade.com
+* Author: Efrekiadev.com
 * License: https://efrekiadev.com/license/
 */
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,7 +1,7 @@
 /**
 * PHP Email Form Validation - v3.6
 * URL: https://efrekiadev.com/php-email-form/
-* Author: BootstrapMade.com
+* Author: Efrekiadev.com
 */
 (function () {
   "use strict";
