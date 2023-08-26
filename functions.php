@@ -140,8 +140,37 @@ add_action( 'widgets_init', 'append_widgets_init' );
 function append_scripts() {
 	wp_enqueue_style( 'append-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'append-style', 'rtl', 'replace' );
+// enqueue styles 
+	//fonts
+	wp_enqueue_style( 'append-fontgoogleinit', 'https://fonts.googleapis.com', array(), _S_VERSION, "all" );
+	wp_enqueue_style( 'append-gstatic', 'https://fonts.gstatic.com', array(), _S_VERSION, "all" );
+	
+	wp_enqueue_style( 'append-googlefont', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap', array(), _S_VERSION, "all" );
+	// vendor css 
+	wp_enqueue_style( 'append-bootstrap', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', array(), _S_VERSION, "all" );
 
+	wp_enqueue_style( 'append-bootstrap-icons', get_template_directory_uri() . '/assets/vendor/bootstrap-icons/bootstrap-icons.css', array(), _S_VERSION, "all" );
+	wp_enqueue_style( 'append-glightbox', get_template_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', array(), _S_VERSION, "all" );
+	wp_enqueue_style( 'append-swiper', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.css', array(), _S_VERSION, "all" );
+	wp_enqueue_style( 'append-aos', get_template_directory_uri() . '/assets/vendor/aos/aos.css', array(), _S_VERSION, "all" );
+// Template Main CSS File
+wp_enqueue_style( 'append-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), _S_VERSION, "all" );
+
+//js
 	wp_enqueue_script( 'append-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'append-bootstrapjs', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true );
+
+	wp_enqueue_script( 'append-glightboxjs', get_template_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js', array('jquery'), _S_VERSION, true );
+
+	wp_enqueue_script( 'append-purecounter_vanilla', get_template_directory_uri() . '/assets/vendor/purecounter/purecounter_vanilla.js', array('jquery'), _S_VERSION, true );
+
+	wp_enqueue_script( 'append-isotope', get_template_directory_uri() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array('jquery'), _S_VERSION, true );
+
+	wp_enqueue_script( 'append-swiperjs', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'append-aosjs', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'append-mainjs', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), _S_VERSION, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
